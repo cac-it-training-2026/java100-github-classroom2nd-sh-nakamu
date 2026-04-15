@@ -25,7 +25,9 @@
 
 package lesson02.challenge07;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Detective {
 
@@ -36,9 +38,19 @@ public class Detective {
 		System.out.println("あなたが思う犯人の身長を適当に入力してみてください。\n");
 		System.out.print("ここに入力＞");
 
-		//ここに入力処理を入れる
+		//身長を入力し、int型の変数heightに変換
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String input_height = reader.readLine();
+		int height = Integer.parseInt(input_height);
 
 		//ここにif～else文を入れる
+		if (height >= 185) {
+			System.out.println("探偵：");
+			System.out.println("その身長だと犯行が可能ですね。");
+		} else {
+			System.out.println("探偵：");
+			System.out.println("その身長だと犯行は無理ですね。");
+		}
 
 	}
 
