@@ -62,11 +62,25 @@ public class Explorer {
 		System.out.println("吊り橋発見！\n");
 
 		int fullLength = 300;
-		int member = 0;
 
+		//渡った人数をカウントするためのfor文
+		for (int member = 0; member < 5; member++) {
+			System.out.println("隊長：");
+			System.out.println((member + 1) + "人目がわたり始めたよ");
 
-		//ここにwhile文を利用した処理を記述
+			//つり橋渡り用のwhile文
+			while (fullLength > 0) {
+				System.out.println("まだ渡っているよ");
+				fullLength -= 50;
 
+				//無限ループ回避
+				if (fullLength <= 0) {
+					break;
+				}
+			}
+			//fullLengthをループ終わりに300再設定
+			fullLength = 300;
+		}
 
 		System.out.println("全員渡り終わったよ！");
 
