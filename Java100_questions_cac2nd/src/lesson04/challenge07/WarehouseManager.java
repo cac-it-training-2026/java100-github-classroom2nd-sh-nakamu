@@ -41,10 +41,28 @@ public class WarehouseManager {
 	public static void main(String[] args) {
 
 		int[] ABKosanArray = new int[5];
-
+		boolean loopFlag = false;
+		int inputNum = 0;
 
 		//ここに重複チェックおよび値の代入処理を記述する
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			inputNum = (int) (Math.random() * 10 % 5 + 1);
+			loopFlag = false;
 
+			do {
+				loopFlag = false;
+				inputNum = (int) (Math.random() * 10 % 5 + 1);
+
+				for (int j = 0; j < ABKosanArray.length; j++) {
+					if (ABKosanArray[j] == inputNum) {
+						loopFlag = true;
+						break;
+					}
+				}
+			} while (loopFlag);
+
+			ABKosanArray[i] = inputNum;
+		}
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の並べ替えをお願いします。\n");
@@ -61,9 +79,31 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
-
 		//ここに昇順にソートする処理を記述する
+		//昇順に並び変えるようの配列を宣言
+		int[] AscendingOrderArray = new int[5];
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			switch (ABKosanArray[i]) {
+			case 1:
+				AscendingOrderArray[0] = ABKosanArray[i];
+				break;
+			case 2:
+				AscendingOrderArray[1] = ABKosanArray[i];
+				break;
+			case 3:
+				AscendingOrderArray[2] = ABKosanArray[i];
+				break;
+			case 4:
+				AscendingOrderArray[3] = ABKosanArray[i];
+				break;
+			default:
+				AscendingOrderArray[4] = ABKosanArray[i];
+			}
+		}
 
+		for (int i = 0; i < AscendingOrderArray.length; i++) {
+			ABKosanArray[i] = AscendingOrderArray[i];
+		}
 
 		System.out.println("小さい順に並べ替えた後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {
@@ -74,9 +114,30 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
-
 		//ここに降順にソートする処理を記述する
+		int[] DescendingOrderArray = new int[5];
+		for (int i = 0; i < ABKosanArray.length; i++) {
+			switch (ABKosanArray[i]) {
+			case 1:
+				DescendingOrderArray[4] = ABKosanArray[i];
+				break;
+			case 2:
+				DescendingOrderArray[3] = ABKosanArray[i];
+				break;
+			case 3:
+				DescendingOrderArray[2] = ABKosanArray[i];
+				break;
+			case 4:
+				DescendingOrderArray[1] = ABKosanArray[i];
+				break;
+			default:
+				DescendingOrderArray[0] = ABKosanArray[i];
+			}
+		}
 
+		for (int i = 0; i < DescendingOrderArray.length; i++) {
+			ABKosanArray[i] = DescendingOrderArray[i];
+		}
 
 		System.out.println("大きい順に並べ替えた後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {

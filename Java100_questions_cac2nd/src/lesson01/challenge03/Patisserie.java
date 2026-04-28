@@ -23,4 +23,19 @@ package lesson01.challenge03;
 
 public class Patisserie {
 
+	public static void main(String[] args) {
+
+		//		変数の宣言
+		int a = 30;
+		int b = 30;
+		int c = 30;
+
+		//		文字の表示
+		System.out.println("本日のおすすめ商品です。\n");
+		System.out.println("シトロン　　　\\250 ・・・ 残り" + a + "個");
+		System.out.println("ショコラ　　　\\280 ・・・ 残り" + b + "個");
+		System.out.println("ピスターシュ　\\320 ・・・ 残り" + c + "個");
+
+	}
+
 }
