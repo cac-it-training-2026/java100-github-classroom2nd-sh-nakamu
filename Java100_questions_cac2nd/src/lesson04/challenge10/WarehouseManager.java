@@ -61,12 +61,45 @@ public class WarehouseManager {
 
 	public static void main(String[] args) {
 
-
 		//ここに必要な配列の宣言を記述する。
-
+		int[] MQArrayC = new int[5];
+		int[] MQArrayD = new int[5];
+		int[] MQArrayE = new int[5];
+		//input_Zeroが0のとき、配列に0を入れる
+		int input_Zero = 0;
+		int input_Num = 0;
 
 		//ここに配列に値を代入する処理を記述する。(要素はランダム)
 
+		for (int i = 0; i < MQArrayC.length; i++) {
+			input_Zero = (int) (Math.random() * 10 % 4);
+			if (input_Zero == 0) {
+				MQArrayC[i] = input_Zero;
+			} else {
+				input_Num = (int) (Math.random() * 10 % 10 + 1);
+				MQArrayC[i] = input_Num;
+			}
+		}
+
+		for (int i = 0; i < MQArrayD.length; i++) {
+			input_Zero = (int) (Math.random() * 10 % 4);
+			if (input_Zero == 0) {
+				MQArrayD[i] = input_Zero;
+			} else {
+				input_Num = (int) (Math.random() * 10 % 10 + 1);
+				MQArrayD[i] = input_Num;
+			}
+		}
+
+		for (int i = 0; i < MQArrayE.length; i++) {
+			input_Zero = (int) (Math.random() * 10 % 4);
+			if (input_Zero == 0) {
+				MQArrayE[i] = input_Zero;
+			} else {
+				input_Num = (int) (Math.random() * 10 % 10 + 1);
+				MQArrayE[i] = input_Num;
+			}
+		}
 
 		System.out.println("E主任：");
 		System.out.println("MQ運送から預かった荷物の確認をお願いします。\n");
@@ -76,21 +109,36 @@ public class WarehouseManager {
 
 		System.out.print("C...");
 
-
 		//ここに配列Cの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayC.length; i++) {
+			if (i == (MQArrayC.length - 1)) {
+				System.out.print(MQArrayC[i]);
+			} else {
+				System.out.print(MQArrayC[i] + ",");
+			}
+		}
 
 		System.out.print("\n\nD...");
 
-
 		//ここに配列Dの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayD.length; i++) {
+			if (i == (MQArrayD.length - 1)) {
+				System.out.print(MQArrayD[i]);
+			} else {
+				System.out.print(MQArrayD[i] + ",");
+			}
+		}
 
 		System.out.print("\n\nE...");
 
-
 		//ここに配列Eの要素をすべて出力する処理を記述する。
-
+		for (int i = 0; i < MQArrayE.length; i++) {
+			if (i == (MQArrayE.length - 1)) {
+				System.out.print(MQArrayE[i]);
+			} else {
+				System.out.print(MQArrayE[i] + ",");
+			}
+		}
 
 		System.out.println("\n\nです。\n");
 
